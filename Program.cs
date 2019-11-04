@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic; 
+using System.Collections.Generic;
 
 
 
@@ -117,7 +117,7 @@ class Program
 
         // return new array
         return D;
-    }*/
+    }
 
     // Sort array by parity via List
     public static int[] SortArrayByParity(int[] A)
@@ -154,19 +154,75 @@ class Program
 
         // return new array
         return E;
+    }*/
+
+    //Unique Morse Code Words
+
+    public static string ConvertOneWordToMorseCode(string oneWord)
+    {
+        string[] morseCode = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
+        //convert a word from string to array of chars
+        char[] wordLetters = oneWord.ToCharArray();
+        string[] morseLetters = new string[wordLetters.Length];
+        //loop to convert letters to Morse code
+        for (int i = 0; i < wordLetters.Length; i++)
+        {
+            int morseIndex = wordLetters[i] - 97;
+            string morseLetter = morseCode[morseIndex];
+
+            morseLetters[i] = morseLetter;
+        }
+        string morseWord = String.Join("",morseLetters);
+        
+        return morseWord;
+    }
+
+    public static string[] ConvertAllWordsToMorseCode(string[] words)
+    {
+        //loop to  convert each word in morse code word
+        string[] morseWords = new string[words.Length];
+        for (int j = 0; j < words.Length; j++)
+        {
+            //take one word from array of words
+            var oneWord = words[j];
+
+            morseWords[j] = ConvertOneWordToMorseCode(oneWord);
+        }
+        return morseWords;
+    }
+
+    public static int CompareMorseWords(string[] morseWords)
+    {
+        // number of different morse words
+        int diff = 0;
+        //declare 2 arrays to compare morseWords elements with each otther
+        string[] A = morseWords;
+        //string[] B = morseWords;
+        int i = 0;
+        while (i < A.Length)
+        {
+            //foreach(string morseWord in A)
+            for(int j = 0; j < A[i].Length; j++)
+            {
+                if (!(A[i] == A[j]))
+                    diff++;
+
+            }
+            i++;
+        }
+        return diff;
     }
 
     static public void Main(string[] args)
     {
-        int[] A = { 3, 1, 2, 4, 5, 4, 8, 6, 2 };
-        int[] result = SortArrayByParity(A);
-
-        for (int i = 0; i < result.Length; i++)
-        {
-            Console.Write(result[i] + ",");
-        }
+        string[] words = { "gin", "zen", "gig", "msg" };
+        Console.Write(CompareMorseWords(ConvertAllWordsToMorseCode(words)));
+        //Console.Write(ConvertOneWordToMorseCode("zen"));
+        
+        
 
     }
+
 }
 
 
