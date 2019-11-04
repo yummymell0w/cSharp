@@ -177,23 +177,24 @@ class Program
         return morseWord;
     }
 
-    public static string[] ConvertAllWordsToMorseCode(string[] words)
+    public static HashSet<string> ConvertAllWordsToMorseCode(string[] words)
     {
         //loop to  convert each word in morse code word
-        string[] morseWords = new string[words.Length];
+        HashSet<string> morseWords = new HashSet<string>();
         for (int j = 0; j < words.Length; j++)
         {
             //take one word from array of words
             var oneWord = words[j];
 
-            morseWords[j] = ConvertOneWordToMorseCode(oneWord);
+            morseWords.Add(ConvertOneWordToMorseCode(oneWord));
         }
         return morseWords;
     }
 
-    public static int CompareMorseWords(string[] morseWords)
+    public static int CompareMorseWords(HashSet<string> morseWords)
     {
-        // number of different morse words
+        return morseWords.Count;
+        /*// number of different morse words
         int diff = 0;
         //declare 2 arrays to compare morseWords elements with each otther
         string[] A = morseWords;
@@ -202,7 +203,7 @@ class Program
         while (i < A.Length)
         {
             //foreach(string morseWord in A)
-            for(int j = 0; j < A[i].Length; j++)
+            for(int j = 0; j < A.Length; j++)
             {
                 if (!(A[i] == A[j]))
                     diff++;
@@ -210,7 +211,7 @@ class Program
             }
             i++;
         }
-        return diff;
+        return diff;*/
     }
 
     static public void Main(string[] args)
