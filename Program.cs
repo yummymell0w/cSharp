@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 
 
@@ -154,7 +155,7 @@ class Program
 
         // return new array
         return E;
-    }*/
+    }
 
     //Unique Morse Code Words
 
@@ -194,33 +195,43 @@ class Program
     public static int CompareMorseWords(HashSet<string> morseWords)
     {
         return morseWords.Count;
-        /*// number of different morse words
-        int diff = 0;
-        //declare 2 arrays to compare morseWords elements with each otther
-        string[] A = morseWords;
-        //string[] B = morseWords;
-        int i = 0;
-        while (i < A.Length)
-        {
-            //foreach(string morseWord in A)
-            for(int j = 0; j < A.Length; j++)
-            {
-                if (!(A[i] == A[j]))
-                    diff++;
+       
+    }*/
 
+    //1108. Defanging an IP Address
+    public static string DefangIPaddr(string ipAddress)
+    {
+        //declare new string builder
+        StringBuilder sb = new StringBuilder();
+        char[] arrayAddress = new char[ipAddress.Length];
+        arrayAddress = ipAddress.ToCharArray();
+        //go through each element of array of chars and if char matches . then add [.] to string builder objec
+        for (int i = 0; i < ipAddress.Length; i++)
+        {
+            if (arrayAddress[i] == '.')
+            {
+                sb.Append("[.]");
+                
             }
-            i++;
+            else
+            {
+                sb.Append(arrayAddress[i]);
+            }
+
         }
-        return diff;*/
+        //convert string builder object to string
+        string defangIP = sb.ToString();
+        //return result
+        return defangIP;
+
     }
 
     static public void Main(string[] args)
     {
-        string[] words = { "gin", "zen", "gig", "msg" };
-        Console.Write(CompareMorseWords(ConvertAllWordsToMorseCode(words)));
-        //Console.Write(ConvertOneWordToMorseCode("zen"));
-        
-        
+        string ipAddress = "1.1.1.1";
+        Console.Write(DefangIPaddr(ipAddress));
+
+
 
     }
 
