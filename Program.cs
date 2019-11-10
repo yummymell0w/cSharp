@@ -196,7 +196,7 @@ class Program
     {
         return morseWords.Count;
        
-    }*/
+    }
 
     //1108. Defanging an IP Address
     public static string DefangIPaddr(string ipAddress)
@@ -224,12 +224,33 @@ class Program
         //return result
         return defangIP;
 
+    }*/
+
+    // To lower case
+    public static string ToLowerCase(string str) {  
+        char[] upperChars = str.ToCharArray();
+        char[] lowerChars = new char[str.Length];
+        for (int i = 0; i < str.Length; i++)
+        {
+            if(upperChars[i] >= 65 && upperChars[i] <=90)
+            {
+            char lowerLetter = (char)(upperChars[i] + 32);
+            lowerChars[i] = lowerLetter;
+            } else 
+            {
+            lowerChars[i] = upperChars[i];
+            } 
+        }
+        string lowerCase = new String(lowerChars);
+        return lowerCase;
+        
     }
 
     static public void Main(string[] args)
     {
-        string ipAddress = "1.1.1.1";
-        Console.Write(DefangIPaddr(ipAddress));
+        string str = "Hello";
+        Console.Write(ToLowerCase(str));
+        
 
 
 
