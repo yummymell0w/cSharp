@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 
 
@@ -205,7 +206,7 @@ class Program
         StringBuilder sb = new StringBuilder();
         char[] arrayAddress = new char[ipAddress.Length];
         arrayAddress = ipAddress.ToCharArray();
-        //go through each element of array of chars and if char matches . then add [.] to string builder objec
+        //go through each element of array of chars and if char matches . then add [.] to string builder object
         for (int i = 0; i < ipAddress.Length; i++)
         {
             if (arrayAddress[i] == '.')
@@ -224,7 +225,7 @@ class Program
         //return result
         return defangIP;
 
-    }*/
+    }
 
     // To lower case
     public static string ToLowerCase(string str) {  
@@ -244,12 +245,52 @@ class Program
         string lowerCase = new String(lowerChars);
         return lowerCase;
         
+    }*/
+
+    // Unique Number of Occurrences
+    public static Dictionary<int, int> UniqueOccurrences(int[] arr) {
+      //create a dictionary from given array of int
+      Dictionary<int, int> map = new Dictionary<int, int>();
+      for (int i=0; i<arr.Length; i++){
+          if (!map.ContainsKey(arr[i]))
+          {
+              map.Add(arr[i], 1);
+          } else
+          {
+              map[arr[i]] += 1;
+          }
+        
+      }
+     return map; 
+
+    }
+
+    public static bool CountOccurrences(Dictionary<int,int> map)
+    {
+        int[] newMap = map.Values.ToArray();
+        //int myJewels = 0;
+        
+        for (int i = 0; i < newMap.Length-1; i++)
+        {
+            for (int j=i+1; j < newMap.Length; j++)
+            {
+                if (newMap[i] == newMap[j])
+                    return false;
+
+            }
+            
+        }
+        return true;
     }
 
     static public void Main(string[] args)
     {
-        string str = "Hello";
-        Console.Write(ToLowerCase(str));
+        int[] arr = new int[] {1,2,2,1,1,3};
+        //Dictionary<int, int> print = UniqueOccurrences(arr);
+        //foreach(KeyValuePair<int, int> item in print)
+        //{
+        Console.Write(CountOccurrences(UniqueOccurrences(arr)));
+        //}
         
 
 
