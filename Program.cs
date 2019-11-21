@@ -245,7 +245,7 @@ class Program
         string lowerCase = new String(lowerChars);
         return lowerCase;
         
-    }*/
+    }
 
     // Unique Number of Occurrences
     public static Dictionary<int, int> UniqueOccurrences(int[] arr) {
@@ -281,17 +281,45 @@ class Program
             
         }
         return true;
-    }
+    }*/
 
+    //1221. Split a String in Balanced Strings
+    public static int BalancedStringSplit(string s)
+    {
+        // declare balance and answer counter
+        int balance = 0;
+        int answer = 0;
+        //convert string to array of char
+        char[] letters = s.ToCharArray();
+        // loop
+        for (int i = 0; i < s.Length; i++)
+        {
+            if (letters[i] == 'L')
+            {
+                balance++;
+            }
+            else
+            {
+                balance--;
+            }
+            if (balance == 0)
+            {
+                answer++;
+            }
+
+        }
+
+        return answer;
+    }
     static public void Main(string[] args)
     {
-        int[] arr = new int[] {1,2,2,1,1,3};
+        string s = "RLRRLLRLRL";
         //Dictionary<int, int> print = UniqueOccurrences(arr);
         //foreach(KeyValuePair<int, int> item in print)
         //{
-        Console.Write(CountOccurrences(UniqueOccurrences(arr)));
+        Console.Write(BalancedStringSplit(s));
         //}
-        
+
 
 
 
