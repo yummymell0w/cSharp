@@ -281,7 +281,7 @@ class Program
             
         }
         return true;
-    }*/
+    }
 
     //1221. Split a String in Balanced Strings
     public static int BalancedStringSplit(string s)
@@ -311,18 +311,46 @@ class Program
 
         return answer;
     }
+
+    //977. Squares of a Sorted Array
+    public static int[] SortedSquares(int[] A) {
+        int[] squares = new int[A.Length];
+        for(int x=0; x < A.Length; x++)
+        {
+            squares[x] = (int)Math.Pow(A[x], 2);
+        }
+
+        Array.Sort(squares);
+        
+        return squares;
+    }
+
+    //Squares of a Sorted Array v2
+    public static int[] SortedSquares(int[] A) {
+        int[] squares = new int[A.Length];
+        int i = 0;
+        int j = A.Length - 1;
+        for(int index = A.Length - 1; index >=0; index--)
+        {
+        var leftNumber = A[i] * A[i];
+        var rightNumber =  A[j] * A [j];
+        if(leftNumber < rightNumber)
+            {
+                squares[index]  = rightNumber;
+                j--;
+            } else
+            {
+                squares[index] = leftNumber;
+                i++;
+            }    
+        }
+        return squares;
+    }*/
+
     static public void Main(string[] args)
     {
-        string s = "RLRRLLRLRL";
-        //Dictionary<int, int> print = UniqueOccurrences(arr);
-        //foreach(KeyValuePair<int, int> item in print)
-        //{
-        Console.Write(BalancedStringSplit(s));
-        //}
-
-
-
-
+        int[] A = {-4,-1,0,3,10};
+         Console.Write(SortedSquares(A));
     }
 
 }
