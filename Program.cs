@@ -348,8 +348,6 @@ class Program
     }*/
 
     //728. Self Dividing Numbers
-
-    
     public static List<int> SelfDividingNumbers(int left, int right) {
         List<int> selfNumbers = new List<int>();
         for(int i = left; i <= right; i++)
