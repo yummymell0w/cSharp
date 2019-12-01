@@ -348,30 +348,42 @@ class Program
     }*/
 
     //728. Self Dividing Numbers
-    public static IList<int> SelfDividingNumbers(int left, int right) {
-        IList<int> selfNumbers = new List<int>();
-        // create char array for each number in the range
-        for(int i = left; i <= right; i++)
-        {
-            char[] range= i.ToCharArray;
-            foreach(var element in range)
-            {
-                // go through each element of char array and check that it is not zero and can be divided by itself without remainder
-                if (!(element==0) && i%element==0)
-                {
-                    selfNumbers.Add(element);
-                }
-            }
 
+    
+    public static List<int> SelfDividingNumbers(int left, int right) {
+        List<int> selfNumbers = new List<int>();
+        for(int i = left; i <= right; i++)
+        {  
+            if (isSelfDividing(i))
+            {
+                    selfNumbers.Add(i);
+            }             
         }
-        return selfNumbers;
+       return selfNumbers;
+    }
+
+    public static bool isSelfDividing(int i)
+    {
+        char[] range = i.ToString().ToCharArray(); 
+        foreach(char element in range)
+        {
+            if ((element == '0') || (i % (element - '0') != 0))
+                {
+                    return false;
+                } 
+        }     
+        return true;
     }
 
     static public void Main(string[] args)
     {
         int left = 1;
         int right = 22;
-         Console.Write(SelfDividingNumbers(left,right));
+        List<int> abc = SelfDividingNumbers(left,right);
+        foreach(var a in abc)
+        {
+            Console.Write(a + ",");
+        }
     }
 
 }
