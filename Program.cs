@@ -345,7 +345,7 @@ class Program
             }    
         }
         return squares;
-    }*/
+    }
 
     //728. Self Dividing Numbers
     public static List<int> SelfDividingNumbers(int left, int right) {
@@ -371,17 +371,31 @@ class Program
                 } 
         }     
         return true;
+    }*/
+
+    //961. N-Repeated Element in Size 2N Array
+     public static int RepeatedNTimes(int[] A) {
+        Dictionary<int, int> inputDigits = new Dictionary<int, int>();
+        int numberN = 0;
+        for(int i=0; i < A.Length; i++)
+        {
+            if(!inputDigits.ContainsKey(A[i]))
+            {
+                inputDigits.Add(A[i],i);
+            } else 
+            {
+                numberN = A[i];
+                break;
+            }
+        }   
+        return numberN;
     }
+
 
     static public void Main(string[] args)
     {
-        int left = 1;
-        int right = 22;
-        List<int> abc = SelfDividingNumbers(left,right);
-        foreach(var a in abc)
-        {
-            Console.Write(a + ",");
-        }
+        int[] A = {1,2,3,3};
+        Console.WriteLine(RepeatedNTimes(A));
     }
 
 }
