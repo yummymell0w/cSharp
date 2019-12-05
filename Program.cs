@@ -24,11 +24,6 @@ namespace Problems
             SelfDividingNumbers object4 = new SelfDividingNumbers();
             Console.WriteLine(object4.SelfDividingNumber(left, right));
 
-            string keyboard = "abcdefghijklmnopqrstuvwxyz";
-            string word = "cba";
-            SingleRowKeyboard object5 = new SingleRowKeyboard();
-            Console.WriteLine(object5.CalculateTime(keyboard, word));
-
             int[] B = { 3, 1, 2, 4 };
             SortArrayByParity object6 = new SortArrayByParity();
             Console.WriteLine(object6.SortArray(B));
@@ -56,6 +51,7 @@ namespace Problems
             int[] arr = { 1, 2, 2, 1, 1, 3 };
             UniqueNumberOccurrences object12 = new UniqueNumberOccurrences();
             Console.WriteLine(object12.UniqueOccurrences(arr));
+            
         }
     }
 }
