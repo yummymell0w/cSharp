@@ -1,10 +1,8 @@
-using System;
-
 namespace Problems
 {
     public class JewelsAndStones
     {
-        public static int CompareOneJewelToStones(char jewel, string S)
+        public int CompareOneJewelToStones(char jewel, string S)
         {
             char[] stones = S.ToCharArray();
             int myJewels = 0;
@@ -18,7 +16,7 @@ namespace Problems
             }
             return myJewels;
         }
-        public static int NumJewelsInStones(string J, string S)
+        public int NumJewelsInStones(string J, string S)
         {
             char[] jewels = J.ToCharArray();
             int myJewels = 0;
@@ -35,7 +33,7 @@ namespace Problems
         }
 
         /*
-        public static int NumJewelsInStones(string J, string S)
+        public int NumJewelsInStones(string J, string S)
         {
             char[] stones = S.ToCharArray();
             char[] jewels = J.ToCharArray();

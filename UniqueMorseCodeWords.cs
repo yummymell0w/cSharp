@@ -5,7 +5,7 @@ namespace Problems
 {
     public class UniqueMorseCodeWords
     {
-        public static string ConvertOneWordToMorseCode(string oneWord)
+        public string ConvertOneWordToMorseCode(string oneWord)
         {
             string[] morseCode = { ".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.." };
             //convert a word from string to array of chars
@@ -24,7 +24,7 @@ namespace Problems
             return morseWord;
         }
 
-        public static HashSet<string> ConvertAllWordsToMorseCode(string[] words)
+        public HashSet<string> ConvertAllWordsToMorseCode(string[] words)
         {
             //loop to  convert each word in morse code word
             HashSet<string> morseWords = new HashSet<string>();
@@ -38,7 +38,7 @@ namespace Problems
             return morseWords;
         }
 
-        public static int CompareMorseWords(HashSet<string> morseWords)
+        public int CompareMorseWords(HashSet<string> morseWords)
         {
             return morseWords.Count;
 

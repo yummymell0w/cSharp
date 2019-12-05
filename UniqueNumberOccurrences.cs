@@ -6,7 +6,7 @@ namespace Problems
 {
     public class UniqueNumberOccurrences
     {
-        public static Dictionary<int, int> UniqueOccurrences(int[] arr)
+        public Dictionary<int, int> UniqueOccurrences(int[] arr)
         {
             Dictionary<int, int> map = new Dictionary<int, int>();
             for (int i = 0; i < arr.Length; i++)
@@ -24,7 +24,7 @@ namespace Problems
 
         }
 
-        public static bool CountOccurrences(Dictionary<int, int> map)
+        public bool CountOccurrences(Dictionary<int, int> map)
         {
             int[] newMap = map.Values.ToArray();
             for (int i = 0; i < newMap.Length - 1; i++)

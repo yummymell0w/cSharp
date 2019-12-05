@@ -4,7 +4,7 @@ namespace Problems
 {
     public class SplitBalancedString
     {
-        public static int BalancedStringSplit(string s)
+        public int BalancedStringSplit(string s)
         {
             // declare balance and answer counter
             int balance = 0;

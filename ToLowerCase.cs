@@ -15,7 +15,7 @@ namespace Problems
     */
 
         // v2
-        public static string ConvertToLowerCase(string str)
+        public string ConvertToLowerCase(string str)
         {
             char[] upperChars = str.ToCharArray();
             char[] lowerChars = new char[str.Length];

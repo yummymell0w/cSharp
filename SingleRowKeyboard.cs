@@ -4,7 +4,7 @@ namespace Problems
 {
     public class SingleRowKeyboard
     {
-        public static int CalculateTime(string keyboard, string word)
+        public int CalculateTime(string keyboard, string word)
         {
             char[] alphabet = keyboard.ToCharArray();
             char[] input = word.ToCharArray();
@@ -13,10 +13,10 @@ namespace Problems
 
             while (i < alphabet.Length)
             {
-                foreach (char letter in input)
+                foreach (char input[i] in input)
                 {
 
-                    if (input[i] == alphabet[i])
+                    if (letter == alphabet[i])
                     {
                         index = Array.IndexOf(alphabet, alphabet[i]);
 
