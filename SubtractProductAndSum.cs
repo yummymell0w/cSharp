@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 
-class SubtractProductAndSum
+public class SubtractProductAndSum
 {
     public int SubtractProduct(int n)
     {
