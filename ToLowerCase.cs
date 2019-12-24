@@ -7,7 +7,7 @@ namespace Problems
         /*
         //v1
     public class Solution {
-        public string ConvertToLowerCase(string str) {
+        public static string ConvertToLowerCase(string str) {
             string lowerCase = str.ToLower();
             return lowerCase;
         }
@@ -15,7 +15,7 @@ namespace Problems
     */
 
         // v2
-        public string ConvertToLowerCase(string str)
+        public static string ConvertToLowerCase(string str)
         {
             char[] upperChars = str.ToCharArray();
             char[] lowerChars = new char[str.Length];
@@ -33,7 +33,6 @@ namespace Problems
             }
             string lowerCase = new String(lowerChars);
             return lowerCase;
-
         }
     }
 }

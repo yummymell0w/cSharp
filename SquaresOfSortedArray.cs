@@ -5,7 +5,7 @@ namespace Problems
     public class SquaresOfSortedArray
     {
         // Squares of a Sorted Array v1
-        public int[] SortedSquares(int[] A)
+        public static int[] SortedSquares(int[] A)
         {
             int[] squares = new int[A.Length];
             for (int x = 0; x < A.Length; x++)
@@ -20,7 +20,7 @@ namespace Problems
 
         /*
         // Squares of a Sorted Array v2
-        public int[] SortedSquares(int[] A)
+        public static int[] SortedSquares(int[] A)
         {
             int[] squares = new int[A.Length];
             int i = 0;

@@ -5,8 +5,7 @@ namespace Problems
 {
     public class SortArrayByParityViaList
     {
-        // Sort array by parity via List
-        public int[] SortArrayByParityList(int[] A)
+        public static int[] SortArrayByParityList(int[] A)
         {
             List<int> B = new List<int>();
             List<int> C = new List<int>();

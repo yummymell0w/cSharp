@@ -7,14 +7,15 @@ namespace Problems
     {
         /*
         // v1
-        public string DefangIPaddr(string address) {
+        public static string DefangIPaddr(string address) {
             string defangIp = address.Replace(".","[.]");
             return defangIp;
             }
-        }*/
+        }
+        */
 
         // v2
-        public string DefangIPaddr(string ipAddress)
+        public static string DefangIPaddr(string ipAddress)
         {
             StringBuilder sb = new StringBuilder();
             char[] arrayAddress = new char[ipAddress.Length];

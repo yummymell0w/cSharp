@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Problems
 {
@@ -6,61 +7,70 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] nums = { 437,315,322,431,686,264,442};
-            var newObject = new FindNumbersWithDigits();
-            Console.WriteLine(newObject.FindNumbers(nums));
-            /*
-                        int n = 234;
-                        SubtractProductAndSum newObject = new SubtractProductAndSum();
-                        Console.WriteLine(newObject.SubtractProduct(n));
+            int[] nums = { 437, 315, 322, 431, 686, 264, 442 };
+            Console.WriteLine(FindNumbersWithDigits.FindNumbers(nums));
 
-                                    string ipAddress = "255.100.50.0";
-                                    DefangingIpAddress object1 = new DefangingIpAddress();
-                                    Console.WriteLine(object1.DefangIPaddr(ipAddress));
+            int n = 234;
+            Console.WriteLine(SubtractProductAndSum.SubtractProduct(n));
 
-                                    string J = "aA";
-                                    string S = "aAAbbbb";
-                                    JewelsAndStones object2 = new JewelsAndStones();
-                                    Console.WriteLine(object2.NumJewelsInStones(S, J));
+            string ipAddress = "255.100.50.0";
+            Console.WriteLine(DefangingIpAddress.DefangIPaddr(ipAddress));
 
-                                    int[] A = { 1, 2, 3, 3 };
-                                    NRepeatedElement object3 = new NRepeatedElement();
-                                    Console.WriteLine(object3.RepeatedNTimes(A));
+            string J = "aA";
+            string S = "aAAbbbb";
+            Console.WriteLine(JewelsAndStones.NumJewelsInStones(S, J));
 
-                                    int left = 1;
-                                    int right = 2;
-                                    SelfDividingNumbers object4 = new SelfDividingNumbers();
-                                    Console.WriteLine(object4.SelfDividingNumber(left, right));
+            int[] A = { 1, 2, 3, 3 };
+            Console.WriteLine(NRepeatedElement.RepeatedNTimes(A));
 
-                                    int[] B = { 3, 1, 2, 4 };
-                                    SortArrayByParity object6 = new SortArrayByParity();
-                                    Console.WriteLine(object6.SortArray(B));
+            int left = 1;
+            int right = 4;
+            List<int> testList = SelfDividingNumbers.SelfDividingNumber(left, right);
+            foreach(int i in testList)
+            {
+            Console.WriteLine(i);
+            }
 
-                                    int[] C = { 3, 1, 2, 4 };
-                                    SortArrayByParityViaList object7 = new SortArrayByParityViaList();
-                                    Console.WriteLine(object7.SortArrayByParityList(C));
+            int[] B = { 3, 1, 2, 4 };
+            int[] testArray = SortArrayByParity.SortArray(B);
+            foreach(var i in testArray)
+            {
+            Console.WriteLine(i);
+            }
 
-                                    string D = "RLRRLLRLRL";
-                                    SplitBalancedString object8 = new SplitBalancedString();
-                                    Console.WriteLine(object8.BalancedStringSplit(D));
+            int[] C = { 3, 1, 2, 4 };
+            int[] testArray2 = SortArrayByParityViaList.SortArrayByParityList(C);
+            foreach(var i in testArray2)
+            {
+            Console.WriteLine(i);
+            }
 
-                                    int[] E = { -4, -1, 0, 3, 10 };
-                                    SquaresOfSortedArray object9 = new SquaresOfSortedArray();
-                                    Console.WriteLine(object9.SortedSquares(E));
+            string D = "RLRRLLRLRL";
+            Console.WriteLine(SplitBalancedString.BalancedStringSplit(D));
 
-                                    string str = "Hello";
-                                    ToLowerCase object10 = new ToLowerCase();
-                                    Console.WriteLine(object10.ConvertToLowerCase(str));
+            int[] E = { -4, -1, 0, 3, 10 };
+            int[] testArray3 = SquaresOfSortedArray.SortedSquares(E);
+            foreach(var i in testArray3)
+            {
+            Console.WriteLine(i);
+            }
 
-                                    string[] words = { "gin", "zen", "gig", "msg" };
-                                    UniqueMorseCodeWords object11 = new UniqueMorseCodeWords();
-                                    Console.WriteLine(object11.ConvertAllWordsToMorseCode(words));
+            string str = "Hello";
+            Console.WriteLine(ToLowerCase.ConvertToLowerCase(str));
 
-                                    int[] arr = { 1, 2, 2, 1, 1, 3 };
-                                    UniqueNumberOccurrences object12 = new UniqueNumberOccurrences();
-                                    Console.WriteLine(object12.UniqueOccurrences(arr));
-                                    */
+            string[] words = { "gin", "zen", "gig", "msg" };
+            HashSet<string> testSet = UniqueMorseCodeWords.ConvertAllWordsToMorseCode(words);
+            foreach(var i in testSet)
+            {
+            Console.WriteLine(i);
+            }
 
+            int[] arr = { 1, 2, 2, 1, 1, 3 };
+            Dictionary<int, int> testMap = UniqueNumberOccurrences.UniqueOccurrences(arr);
+            foreach(KeyValuePair<int, int> i in testMap)
+            {
+            Console.WriteLine(i.Value);
+            }
         }
     }
 }

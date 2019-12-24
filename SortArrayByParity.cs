@@ -4,7 +4,7 @@ namespace Problems
 {
     public class SortArrayByParity
     {
-        public int[] SortArray(int[] A)
+        public static int[] SortArray(int[] A)
         {
             int[] B = new int[A.Length];
             int[] C = new int[A.Length];

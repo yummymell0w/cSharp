@@ -4,14 +4,11 @@ namespace Problems
 {
     public class SplitBalancedString
     {
-        public int BalancedStringSplit(string s)
+        public static int BalancedStringSplit(string s)
         {
-            // declare balance and answer counter
             int balance = 0;
             int answer = 0;
-            //convert string to array of char
             char[] letters = s.ToCharArray();
-            // loop
             for (int i = 0; i < s.Length; i++)
             {
                 if (letters[i] == 'L')

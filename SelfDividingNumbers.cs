@@ -5,7 +5,7 @@ namespace Problems
 {
     public class SelfDividingNumbers
     {
-        public List<int> SelfDividingNumber(int left, int right)
+        public static List<int> SelfDividingNumber(int left, int right)
         {
             List<int> selfNumbers = new List<int>();
             for (int i = left; i <= right; i++)
@@ -18,7 +18,7 @@ namespace Problems
             return selfNumbers;
         }
 
-        public bool isSelfDividing(int i)
+        public static bool isSelfDividing(int i)
         {
             char[] range = i.ToString().ToCharArray();
             foreach (char element in range)
