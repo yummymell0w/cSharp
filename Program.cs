@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Problems
 {
@@ -26,50 +27,56 @@ namespace Problems
             int left = 1;
             int right = 4;
             List<int> testList = SelfDividingNumbers.SelfDividingNumber(left, right);
-            foreach(int i in testList)
-            {
-            Console.WriteLine(i);
-            }
+            printList(testList);
 
             int[] B = { 3, 1, 2, 4 };
             int[] testArray = SortArrayByParity.SortArray(B);
-            foreach(var i in testArray)
-            {
-            Console.WriteLine(i);
-            }
+            printList(testArray.ToList());
 
             int[] C = { 3, 1, 2, 4 };
             int[] testArray2 = SortArrayByParityViaList.SortArrayByParityList(C);
-            foreach(var i in testArray2)
-            {
-            Console.WriteLine(i);
-            }
+            printList(testArray2.ToList());
 
             string D = "RLRRLLRLRL";
             Console.WriteLine(SplitBalancedString.BalancedStringSplit(D));
 
             int[] E = { -4, -1, 0, 3, 10 };
             int[] testArray3 = SquaresOfSortedArray.SortedSquares(E);
-            foreach(var i in testArray3)
-            {
-            Console.WriteLine(i);
-            }
+            printList(testArray3.ToList());
 
             string str = "Hello";
             Console.WriteLine(ToLowerCase.ConvertToLowerCase(str));
 
             string[] words = { "gin", "zen", "gig", "msg" };
             HashSet<string> testSet = UniqueMorseCodeWords.ConvertAllWordsToMorseCode(words);
-            foreach(var i in testSet)
-            {
-            Console.WriteLine(i);
-            }
+
 
             int[] arr = { 1, 2, 2, 1, 1, 3 };
             Dictionary<int, int> testMap = UniqueNumberOccurrences.UniqueOccurrences(arr);
-            foreach(KeyValuePair<int, int> i in testMap)
+            printDictionary(testMap);
+        }
+
+        public static void printHashSet(HashSet<string> testSet)
+        {
+            foreach (var i in testSet)
             {
-            Console.WriteLine(i.Value);
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void printDictionary(Dictionary<int, int> testMap)
+        {
+            foreach (KeyValuePair<int, int> i in testMap)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void printList(List<int> testList)
+        {
+            foreach (int i in testList)
+            {
+                Console.WriteLine(i);
             }
         }
     }
