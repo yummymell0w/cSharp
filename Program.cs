@@ -8,7 +8,10 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] nums = { 437, 315, 322, 431, 686, 264, 442 };
+            string S = "abc";
+            printList(LetterCasePermutation.LetterPermutation(S));
+
+            /*int[] nums = { 437, 315, 322, 431, 686, 264, 442 };
             Console.WriteLine(FindNumbersWithDigits.FindNumbers(nums));
 
             int n = 234;
@@ -53,7 +56,7 @@ namespace Problems
 
             int[] arr = { 1, 2, 2, 1, 1, 3 };
             Dictionary<int, int> testMap = UniqueNumberOccurrences.UniqueOccurrences(arr);
-            printDictionary(testMap);
+            printDictionary(testMap);*/
         }
 
         public static void printHashSet(HashSet<string> testSet)
@@ -72,9 +75,9 @@ namespace Problems
             }
         }
 
-        public static void printList(List<int> testList)
+        public static void printList(List<string> testList)
         {
-            foreach (int i in testList)
+            foreach (var i in testList)
             {
                 Console.WriteLine(i);
             }
