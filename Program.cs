@@ -8,7 +8,7 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            string S = "abc";
+            string S = "a1b2";
             printList(LetterCasePermutation.LetterPermutation(S));
 
             /*int[] nums = { 437, 315, 322, 431, 686, 264, 442 };

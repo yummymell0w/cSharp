@@ -10,7 +10,6 @@ public class LetterCasePermutation
         int index = 0;
         char[] charArray = new char[S.Length];
         char[] source = S.ToCharArray();
-        //call permutation below:
         permutation(source, charArray, index, result);
         return result;
     }
@@ -25,10 +24,18 @@ public class LetterCasePermutation
         }
 
         // function
-        charArray[index] = toLower(source[index]);
-        permutation(source, charArray, index + 1, result);
-        charArray[index] = toUpper(source[index]);
-        permutation(source, charArray, index + 1, result);
+        if (!(source[index] >= 48 && source[index] <= 57))
+        {
+            charArray[index] = toLower(source[index]);
+            permutation(source, charArray, index + 1, result);
+            charArray[index] = toUpper(source[index]);
+            permutation(source, charArray, index + 1, result);
+        }
+        else
+        {
+            charArray[index] = source[index];
+            permutation(source, charArray, index + 1, result);
+        }
     }
 
     static char toLower(char c)
