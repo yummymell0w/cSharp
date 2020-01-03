@@ -1,4 +1,3 @@
-
 using System.Collections.Generic;
 
 
@@ -24,44 +23,26 @@ public class LetterCasePermutation
         }
 
         // function
+        charArray[index] = source[index];
+        permutation(source, charArray, index + 1, result);
+
         if (!(source[index] >= 48 && source[index] <= 57))
         {
-            charArray[index] = toLower(source[index]);
-            permutation(source, charArray, index + 1, result);
-            charArray[index] = toUpper(source[index]);
+            charArray[index] = change(source[index]);
             permutation(source, charArray, index + 1, result);
         }
-        else
-        {
-            charArray[index] = source[index];
-            permutation(source, charArray, index + 1, result);
-        }
+        
     }
 
-    static char toLower(char c)
+    static char change(char c)
     {
         if (c >= 65 && c <= 90)
         {
-            char newLower = (char)(c + 32);
-            return newLower;
+            return (char)(c + 32);
         }
         else
         {
-            return c;
+            return (char)(c - 32);
         }
     }
-
-    static char toUpper(char c)
-    {
-        if (c >= 97 && c <= 122)
-        {
-            char newUpper = (char)(c - 32);
-            return newUpper;
-        }
-        else
-        {
-            return c;
-        }
-    }
-
 }
