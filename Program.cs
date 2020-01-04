@@ -8,10 +8,14 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
+            int[] heights = {1,2,1,2,1,1,1,2,1};
+            Console.WriteLine(StudentHeights.HeightChecker(heights));
+
+            /*
             string S = "a1b2";
             printList(LetterCasePermutation.LetterPermutation(S));
 
-            /*int[] nums = { 437, 315, 322, 431, 686, 264, 442 };
+            int[] nums = { 437, 315, 322, 431, 686, 264, 442 };
             Console.WriteLine(FindNumbersWithDigits.FindNumbers(nums));
 
             int n = 234;
@@ -38,14 +42,14 @@ namespace Problems
 
             int[] C = { 3, 1, 2, 4 };
             int[] testArray2 = SortArrayByParityViaList.SortArrayByParityList(C);
-            printList(testArray2.ToList());
+            printIntList(testArray2.ToList());
 
             string D = "RLRRLLRLRL";
             Console.WriteLine(SplitBalancedString.BalancedStringSplit(D));
 
             int[] E = { -4, -1, 0, 3, 10 };
             int[] testArray3 = SquaresOfSortedArray.SortedSquares(E);
-            printList(testArray3.ToList());
+            printIntList(testArray3.ToList());
 
             string str = "Hello";
             Console.WriteLine(ToLowerCase.ConvertToLowerCase(str));
@@ -76,6 +80,14 @@ namespace Problems
         }
 
         public static void printList(List<string> testList)
+        {
+            foreach (var i in testList)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void printIntList(List<int> testList)
         {
             foreach (var i in testList)
             {
