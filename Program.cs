@@ -7,11 +7,21 @@ namespace Problems
     public class Program
     {
         static public void Main(string[] args)
-        {
+        {   
+
+            int[] nums = {2,5};
+            int target = 0;
+            Console.WriteLine(BinarySearch.Search(nums, target));
+    
+            /*
+            int[] arr = {1,2,2,6,6,6,6,7,10};
+            Console.WriteLine(FindSpecificElement.FindSpecialInteger(arr));
+
+            
             int[] heights = {1,2,1,2,1,1,1,2,1};
             Console.WriteLine(StudentHeights.HeightChecker(heights));
 
-            /*
+            
             string S = "a1b2";
             printList(LetterCasePermutation.LetterPermutation(S));
 

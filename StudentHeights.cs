@@ -29,7 +29,6 @@ public class StudentHeights
         for (int i = 0; i < copyHeights.Length; i++)
         {
             smallestIndex = FindSmallest(copyHeights);
-            
             sortedHeights[i] = copyHeights[smallestIndex];
             copyHeights[smallestIndex] = Int32.MaxValue;
 
