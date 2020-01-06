@@ -8,7 +8,11 @@ namespace Problems
     {
         static public void Main(string[] args)
         {   
+            int[] nums = {1,3,5,6};
+            int target = 2;
+            Console.WriteLine(SearchInsertPosition.SearchInsert(nums, target)); 
 
+            /*
             int[] nums = {2,5};
             int target = 0;
             Console.WriteLine(BinarySearch.Search(nums, target));
