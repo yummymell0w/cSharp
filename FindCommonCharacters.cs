@@ -1,34 +1,66 @@
 using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 public class FindCommonCharacters
 {
-    public static IList<string> CommonChars(string[] A)
+    //Input: ["bella","label","roller"]
+    //Output: ["e","l","l"]
+
+    //convert string to dict
+    public static Dictionary<char, int> toDictionary(string word)
     {
-        //Input: ["bella","label","roller"]
-        //Output: ["e","l","l"]
-
-        Dictionary<int, char> listOfLetters = new Dictionary<int, char>();
-        char[][] wordsArray = new char[][] { };
-
+        Dictionary<char, int> wordDict = new Dictionary<char, int>();
+        char[] charArr = word.ToCharArray();
+        for (int i = 0; i < charArr.Length; i++)
         {
-            for (int i = 0; i < A.Length; i++)
+            int count = 1;
+            if (wordDict.ContainsKey(charArr[i]))
             {
-                char[] chars = A[i].ToCharArray();
-                wordsArray[i] = new char[] { chars };
+                char myKey = charArr[i];
+                wordDict[myKey] = count++;
             }
+            else
+            {
+                wordDict.Add(charArr[i], count);
+            }
+        }
+        return wordDict;
+    }
 
-        };
-
+    public static List<string> CommonChars(string[] A)
+    {
+        //add dictionary to array of dict
+        Dictionary<char, int>[] jagged = new Dictionary<char, int>[A.Length];
         for (int i = 0; i < A.Length; i++)
         {
-            char[] chars = A[i].ToCharArray();
-            for (int j = 0; j < chars.Length; j++)
+            jagged[i] = toDictionary(A[i]);
+        }
+
+        //declare empty dictionary for repeating letters
+        Dictionary<char, int> repeatedLetters = new Dictionary<char, int>();
+
+        //compare dictionaries and add repeating dict to the new dict
+        for (int i = 0; i < jagged.Length - 1; i++)
+        {
+            for (int j = i + 1; j < jagged.Length; j++)
             {
-                
+                repeatedLetters = jagged[j].Where(entry => jagged[i][entry.Key] != entry.Value)
+                 .ToDictionary(entry => entry.Key, entry => entry.Value);
             }
         }
 
+        //conver final dict to a list or string, if int value> 1 then add char the # of times = int value
+        List<string> result = new List<string>();
+        foreach (var x in repeatedLetters)
+        {
+            for (int counter = x.Value; counter > 0; counter--)
+            {
+                result.Add(x.Key.ToString());
+            }
+        }
 
-
+        return result;
     }
 }
+
