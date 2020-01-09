@@ -4,25 +4,19 @@ using System.Text;
 
 public class FindCommonCharacters
 {
-    //Input: ["bella","label","roller"]
-    //Output: ["e","l","l"]
-
-    //convert string to dict
     public static Dictionary<char, int> toDictionary(string word)
     {
         Dictionary<char, int> wordDict = new Dictionary<char, int>();
         char[] charArr = word.ToCharArray();
         for (int i = 0; i < charArr.Length; i++)
         {
-            int count = 1;
-            if (wordDict.ContainsKey(charArr[i]))
+            if (wordDict.TryGetValue(charArr[i], out int count))
             {
-                char myKey = charArr[i];
-                wordDict[myKey] = count++;
+                wordDict[charArr[i]] = count + 1;
             }
             else
             {
-                wordDict.Add(charArr[i], count);
+                wordDict.Add(charArr[i], 1);
             }
         }
         return wordDict;
@@ -31,36 +25,41 @@ public class FindCommonCharacters
     public static List<string> CommonChars(string[] A)
     {
         //add dictionary to array of dict
-        Dictionary<char, int>[] jagged = new Dictionary<char, int>[A.Length];
+        Dictionary<char, int>[] allDict = new Dictionary<char, int>[A.Length];
         for (int i = 0; i < A.Length; i++)
         {
-            jagged[i] = toDictionary(A[i]);
+            allDict[i] = toDictionary(A[i]);
         }
 
         //declare empty dictionary for repeating letters
-        Dictionary<char, int> repeatedLetters = new Dictionary<char, int>();
+        List<string> repeatingLetters = new List<string>();
 
         //compare dictionaries and add repeating dict to the new dict
-        for (int i = 0; i < jagged.Length - 1; i++)
+        foreach (var letter in allDict[0])
         {
-            for (int j = i + 1; j < jagged.Length; j++)
+            int min = letter.Value;
+            for (int i = 1; i < allDict.Length; i++)
             {
-                repeatedLetters = jagged[j].Where(entry => jagged[i][entry.Key] != entry.Value)
-                 .ToDictionary(entry => entry.Key, entry => entry.Value);
+                if (allDict[i].TryGetValue(letter.Key, out int value))
+                {
+                    if (value < min)
+                    {
+                        min = value;
+                    }
+                }
+                else
+                {
+                    min = 0;
+                    break;
+                }
+            }
+
+            for (; min > 0; min--)
+            {
+                repeatingLetters.Add(letter.Key.ToString());
             }
         }
-
-        //conver final dict to a list or string, if int value> 1 then add char the # of times = int value
-        List<string> result = new List<string>();
-        foreach (var x in repeatedLetters)
-        {
-            for (int counter = x.Value; counter > 0; counter--)
-            {
-                result.Add(x.Key.ToString());
-            }
-        }
-
-        return result;
+        return repeatingLetters;
     }
 }
 

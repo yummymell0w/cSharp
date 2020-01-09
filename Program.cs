@@ -8,6 +8,8 @@ namespace Problems
     {
         static public void Main(string[] args)
         {   
+            //string word = "a";
+            //printDictionaryChar(FindCommonCharacters.toDictionary(word));
 
             string[] A = {"bella","label","roller"};
             printList(FindCommonCharacters.CommonChars(A));
@@ -93,6 +95,14 @@ namespace Problems
         public static void printDictionary(Dictionary<int, int> testMap)
         {
             foreach (KeyValuePair<int, int> i in testMap)
+            {
+                Console.WriteLine(i);
+            }
+        }
+
+        public static void printDictionaryChar(Dictionary<char, int> testMap)
+        {
+            foreach (KeyValuePair<char, int> i in testMap)
             {
                 Console.WriteLine(i);
             }
