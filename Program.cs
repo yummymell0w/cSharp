@@ -8,6 +8,10 @@ namespace Problems
     {
         static public void Main(string[] args)
         {   
+            int[] arr = {17,18,5,4,6,1};
+            int[] results =ReplaceWithGreatestElement.ReplaceElements(arr);
+            printIntList(results.ToList());
+            /*
             //string word = "a";
             //printDictionaryChar(FindCommonCharacters.toDictionary(word));
 
