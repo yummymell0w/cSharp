@@ -7,11 +7,20 @@ namespace Problems
     public class Program
     {
         static public void Main(string[] args)
-        {   
-            int[] arr = {17,18,5,4,6,1};
+        {
+            int[] arr = { 2, 4, 6 };
+            //int[] unsorted = { 3, 2, 6, 8, 9, 44, 1 };
+            int[] unsorted = {};
+            List<int> letters = new List<int> { 1, 2, 3, 4, 5 };
+            Console.WriteLine(Exercise.sum(arr));
+            Console.WriteLine(Exercise.numberOfItems(letters));
+            printIntList(Exercise.quickSort(unsorted).ToList());
+
+
+            /*int[] arr = {17,18,5,4,6,1};
             int[] results =ReplaceWithGreatestElement.ReplaceElements(arr);
             printIntList(results.ToList());
-            /*
+            
             //string word = "a";
             //printDictionaryChar(FindCommonCharacters.toDictionary(word));
 
