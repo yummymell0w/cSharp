@@ -8,7 +8,11 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] arr = { 2, 4, 6 };
+            
+            int[] A = {3,1,4,2};
+            printIntList(SortArrayByParityII.SortArrayByParity(A).ToList());
+
+            /*int[] arr = { 2, 4, 6 };
             //int[] unsorted = { 3, 2, 6, 8, 9, 44, 1 };
             int[] unsorted = {};
             List<int> letters = new List<int> { 1, 2, 3, 4, 5 };
