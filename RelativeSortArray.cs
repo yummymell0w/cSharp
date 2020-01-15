@@ -20,16 +20,12 @@ public class RelativeSortArray
                 {
                     match.Add(arr1[j]);
                 }
-                /* does not work
+                // else does not work yet
                 else
                 {
                     noMatch.Add(arr1[j]);
-                }*/
-            }
-            if (arr2[i] != arr1[i])
-                {
-                    noMatch.Add(arr1[i]);
                 }
+            }
         }
 
         int[] result = new int[arr1.Length];
