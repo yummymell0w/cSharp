@@ -8,11 +8,15 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
+            int[] arr1 = {2,3,1,3,2,4,6,7,9,2,19};
+            int[] arr2 = {2,1,4,3,9,6};
+            printIntList(RelativeSortArray.RelativeSort(arr1, arr2).ToList());
             
+            /*
             int[] A = {3,1,4,2};
             printIntList(SortArrayByParityII.SortArrayByParity(A).ToList());
 
-            /*int[] arr = { 2, 4, 6 };
+            int[] arr = { 2, 4, 6 };
             //int[] unsorted = { 3, 2, 6, 8, 9, 44, 1 };
             int[] unsorted = {};
             List<int> letters = new List<int> { 1, 2, 3, 4, 5 };
