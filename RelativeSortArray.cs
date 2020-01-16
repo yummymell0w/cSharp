@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System;
+using System.Linq;
 public class RelativeSortArray
 {
     public static int[] RelativeSort(int[] arr1, int[] arr2)
@@ -28,10 +29,11 @@ public class RelativeSortArray
             }
         }
 
+        noMatch.Sort();
+        var finalList = noMatch.Except(match).ToArray();
         int[] result = new int[arr1.Length];
         Array.Copy(match.ToArray(), result, match.Count);
-        Array.Copy(noMatch.ToArray(), 0, result, match.Count, noMatch.Count);
-
+        Array.Copy(finalList, 0, result, match.Count, finalList.Length);
         return result;
     }
 }

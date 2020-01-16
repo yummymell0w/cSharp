@@ -8,8 +8,8 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] arr1 = {2,3,1,3,2,4,6,7,9,2,19};
-            int[] arr2 = {2,1,4,3,9,6};
+            int[] arr1 = {2,21,43,38,0,42,33,7,24,13,12,27,12,24,5,23,29,48,30,31};
+            int[] arr2 = {2,42,38,0,43,21};
             printIntList(RelativeSortArray.RelativeSort(arr1, arr2).ToList());
             
             /*
@@ -141,7 +141,7 @@ namespace Problems
         {
             foreach (var i in testList)
             {
-                Console.WriteLine(i);
+                Console.Write(i);
             }
         }
     }
