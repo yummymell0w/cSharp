@@ -5,11 +5,7 @@ public class RelativeSortArray
 {
     public static int[] RelativeSort(int[] arr1, int[] arr2)
     {
-        //Input: arr1 = [2,3,1,3,2,4,6,7,9,2,19], 
-        //arr2 = [2,1,4,3,9,6]
-        //Output: [2,2,2,1,4,3,3,9,6,7,19]
-
-     
+        HashSet<int> array2 = new HashSet<int>(arr2);
         List<int> match = new List<int>();
         List<int> noMatch = new List<int>();
 
@@ -21,19 +17,21 @@ public class RelativeSortArray
                 {
                     match.Add(arr1[j]);
                 }
-                // else does not work yet
-                else
-                {
-                    noMatch.Add(arr1[j]);
-                }
+            }
+        }
+
+        foreach (var number in arr1)
+        {
+            if (!array2.Contains(number))
+            {
+                noMatch.Add(number);
             }
         }
 
         noMatch.Sort();
-        var finalList = noMatch.Except(match).ToArray();
         int[] result = new int[arr1.Length];
         Array.Copy(match.ToArray(), result, match.Count);
-        Array.Copy(finalList, 0, result, match.Count, finalList.Length);
+        Array.Copy(noMatch.ToArray(), 0, result, match.Count, noMatch.Count);
         return result;
     }
 }
