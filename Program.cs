@@ -8,11 +8,16 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
+            string S = "loveleetcode";
+            char C = 'e';
+            printIntList(ShortestDistance.ShortestToChar(S, C).ToList());
+
+            /*
             int[] arr1 = {2,21,43,38,0,42,33,7,24,13,12,27,12,24,5,23,29,48,30,31};
             int[] arr2 = {2,42,38,0,43,21};
             printIntList(RelativeSortArray.RelativeSort(arr1, arr2).ToList());
             
-            /*
+            
             int[] A = {3,1,4,2};
             printIntList(SortArrayByParityII.SortArrayByParity(A).ToList());
 
