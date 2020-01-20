@@ -13,34 +13,26 @@ namespace Problems
             char[] letters = S.ToCharArray();
             int[] distance = new int[letters.Length];
 
-            for (int i = 0; i < letters.Length; i++)
+            for (int index = 0; index < letters.Length; index++)
             {
-                for (int j = 0; i < letters.Length; j++)
-                {
-                    if (letters[i] != C)
-                    {
-
-                        distance[i] = Array.IndexOf(letters, C) - letters[i];
-                    }
-                    else
-                    {
-                        distance[i] = 0;
-                    }
-
-                   
-                }
+                distance[index] = CalculateDistance(letters, C, index);
             }
 
-
-
             return distance;
-
         }
 
-        public static int CalculateDistance(char[] letters, char C, int i])
+        public static int CalculateDistance(char[] letters, char C, int index)
         {
+            int i = 0;
+            while(!(index + i < letters.Length && letters[index + i] == C || index - i >= 0 && letters[index - i] == C))
+            {
+                i++;
+            }
 
+            return i;
         }
 
     }
+
 }
+
