@@ -8,7 +8,11 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            string S = "loveleetcode";
+            int[] nums1 = {1, 2, 2, 1};
+            int[] nums2 = {2, 2};
+            printIntList(IntersectionOfArrays.Intersection(nums1, nums2).ToList());
+
+            /*string S = "loveleetcode";
             char C = 'e';
             printIntList(ShortestDistance.ShortestToChar(S, C).ToList());
 
