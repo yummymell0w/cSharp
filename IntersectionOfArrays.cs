@@ -10,10 +10,11 @@ namespace Problems
     {
         public static int[] Intersection(int[] nums1, int[] nums2)
         {
-            //Input: nums1 = [1,2,2,1], nums2 = [2,2]
-            //Output: [2]
+            //Input: nums1 = [4,9,5]
+            //nums2 = [9,4,9,8,4]
+        //Output: [4,9]
 
-            HashSet<int> arr1 = new HashSet<int>(nums1);
+        HashSet<int> arr1 = new HashSet<int>(nums1);
             HashSet<int> result = new HashSet<int>();
 
             for (int i = 0; i < nums2.Length; i++)

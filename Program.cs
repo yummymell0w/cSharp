@@ -8,9 +8,9 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] nums1 = {1, 2, 2, 1};
-            int[] nums2 = {2, 2};
-            printIntList(IntersectionOfArrays.Intersection(nums1, nums2).ToList());
+            int[] nums1 = { 3,1,2 };
+            int[] nums2 = { 1,1 };
+            printIntList(IntersectionOfArraysII.Intersect(nums1, nums2).ToList());
 
             /*string S = "loveleetcode";
             char C = 'e';
