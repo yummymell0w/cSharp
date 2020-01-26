@@ -8,6 +8,11 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
+            string s = "10#11#12";
+            Console.WriteLine(DecryptStringFromAlphabet.FreqAlphabets(s));
+
+
+            /*
             int[] nums1 = { 3,1,2 };
             int[] nums2 = { 1,1 };
             printIntList(IntersectionOfArraysII.Intersect(nums1, nums2).ToList());
