@@ -25,13 +25,11 @@ namespace Problems
                 if (arrayAddress[i] == '.')
                 {
                     sb.Append("[.]");
-
                 }
                 else
                 {
                     sb.Append(arrayAddress[i]);
                 }
-
             }
             string defangIP = sb.ToString();
             return defangIP;

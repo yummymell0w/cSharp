@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 //recursion and quicksort exercises
-public class Exercise
+public class QuickSortExercise
 {
     public static int sum(int[] arr)
     {
