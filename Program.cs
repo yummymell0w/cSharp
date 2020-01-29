@@ -8,9 +8,11 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            string s = "10#11#12";
-            Console.WriteLine(DecryptStringFromAlphabet.FreqAlphabets(s));
 
+            BreadthFirstSearchAlgorithm.Search();
+
+            /*string s = "10#11#12";
+            Console.WriteLine(DecryptStringFromAlphabet.FreqAlphabets(s));
 
             /*
             int[] nums1 = { 3,1,2 };

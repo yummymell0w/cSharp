@@ -7,8 +7,9 @@ namespace Problems
 {
     public class BreadthFirstSearchAlgorithm
     {
-        public static bool Search(string name)
+        public static bool Search()
         {
+            // create person's objects
             Graph you = new Graph("you");
             Graph bob = new Graph("bob");
             Graph alice = new Graph("alice");
@@ -18,6 +19,8 @@ namespace Problems
             Graph thom = new Graph("thom");
             Graph jonny = new Graph("jonny");
 
+
+            // add friends
             you.nodes.Add(alice);
             you.nodes.Add(bob);
             you.nodes.Add(claire);
@@ -30,15 +33,51 @@ namespace Problems
             claire.nodes.Add(thom);
             claire.nodes.Add(jonny);
 
+            //add people to the queue
             Queue<Graph> searchQueue = new Queue<Graph>();
-            //to do
+            searchQueue.Enqueue(you);
+            searchQueue.Enqueue(bob);
+            searchQueue.Enqueue(alice);
+            searchQueue.Enqueue(claire);
             searchQueue.Enqueue(anuj);
+            searchQueue.Enqueue(peggy);
+            searchQueue.Enqueue(thom);
+            searchQueue.Enqueue(jonny);
 
-            searchQueue.Enqueue(anuj.nodes);
+            while (searchQueue.Count > 0)
+            {
+                var person = searchQueue.Peek();
+                if (!person.checkedNode)
+                {
+                    if (checkIfThisIsSeller(person.personName))
+                    {
+                        Console.WriteLine($"{person.personName} is a mango seller!");
+                        return true;
+                    }
+                    else
+                    {
+                        searchQueue.Dequeue();
+                        person.checkedNode = true;
+                    }
+                }
 
+            }
+            return false;
         }
 
-        
+        //checks if name's last letter matches 'm'
+        public static bool checkIfThisIsSeller(string personName)
+        {
+            char[] name = personName.ToCharArray();
+            if (name[name.Length - 1] == 'm')
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+
     }
 }
 
