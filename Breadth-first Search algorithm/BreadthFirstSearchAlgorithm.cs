@@ -35,14 +35,12 @@ namespace Problems
 
             //add people to the queue
             Queue<Graph> searchQueue = new Queue<Graph>();
-            searchQueue.Enqueue(you);
-            searchQueue.Enqueue(bob);
-            searchQueue.Enqueue(alice);
-            searchQueue.Enqueue(claire);
-            searchQueue.Enqueue(anuj);
-            searchQueue.Enqueue(peggy);
-            searchQueue.Enqueue(thom);
-            searchQueue.Enqueue(jonny);
+            foreach (var node in you.nodes)
+            {
+
+                searchQueue.Enqueue(node);
+
+            }
 
             while (searchQueue.Count > 0)
             {
