@@ -7,7 +7,7 @@ namespace Problems.MaxDepthOfNTree
     public class Node
     {
         public int val;
-        public List<Node> children;
+        public IList<Node> children;
 
         public Node() { }
 
@@ -16,7 +16,7 @@ namespace Problems.MaxDepthOfNTree
             val = _val;
         }
 
-        public Node(int _val, List<Node> _children)
+        public Node(int _val, IList<Node> _children)
         {
             val = _val;
             children = _children;
