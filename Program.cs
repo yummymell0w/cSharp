@@ -9,9 +9,6 @@ namespace Problems
         static public void Main(string[] args)
         {
 
-           
-            
-            
             BreadthFirstSearchAlgorithm.Search();
 
             /*string s = "10#11#12";
