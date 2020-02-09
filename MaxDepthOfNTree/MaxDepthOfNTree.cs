@@ -17,7 +17,7 @@ namespace Problems.MaxDepthOfNTree
             }
 
             Queue<Node> cur = new Queue<Node>();
-            Queue<Node> next = new Queue<Node>();
+            Queue<Node> next;
 
             cur.Enqueue(root);
 

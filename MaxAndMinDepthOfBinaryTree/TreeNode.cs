@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Problems.MaxDepthOfBinaryTree
+namespace Problems.MaxAndMinDepthOfBinaryTree
 {
     public class TreeNode
     {

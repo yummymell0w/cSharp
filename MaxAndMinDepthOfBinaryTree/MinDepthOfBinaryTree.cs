@@ -1,5 +1,4 @@
-﻿using Problems.MaxDepthOfBinaryTree;
-using System;
+﻿using System;
 
 namespace Problems.MaxAndMinDepthOfBinaryTree
 {
@@ -20,14 +19,20 @@ namespace Problems.MaxAndMinDepthOfBinaryTree
         {
             if (node == null)
             {
-                return 0;
+                return -1;
+            }
+            if (node.left == null && node.right == null)
+            {
+                return 1;
             }
 
-            int min = Int32.MaxValue;
+            int? lt = CountNodes(node.left);
+            int? rt = CountNodes(node.right);
 
-            min = Math.Min(CountNodes(node.left), min);
-            min = Math.Min(CountNodes(node.right), min);
-            return min+1;
+            int l = lt == -1 ? Int32.MaxValue : (int)lt;
+            int r = rt == -1 ? Int32.MaxValue : (int)rt;
+
+            return Math.Min((int)l, (int)r) + 1;
         }
     }
 }
