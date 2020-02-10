@@ -13,22 +13,42 @@ namespace Problems.MaxAndMinDepthOfBinaryTree
                 return 0;
             }
 
-            if (root.right == null && root.left == null)
+            Queue<TreeNode> searchQueue = new Queue<TreeNode>();
+            searchQueue.Enqueue(root);
+
+            Queue<TreeNode> nodesQueue;
+
+            int depth = 0;
+
+            do
             {
-                return 1;
-            }
+                nodesQueue = new Queue<TreeNode>();
+                depth++;
+                while (searchQueue.Count > 0)
+                {
+                    var node = searchQueue.Dequeue();
 
-            Stack<TreeNode> stack = new Stack<TreeNode>();
-            stack.Push(root);
+                    if (node.right == null && node.left == null)
+                    {
+                        return depth;
+                    }
 
+                    if (node.left != null)
+                    {
+                        nodesQueue.Enqueue(node.left);
+                    }
 
-            int depth = Int32.MaxValue;
+                    if (node.right != null)
+                    {
+                        nodesQueue.Enqueue(node.right);
+                    }
+                }
 
-            while (stack.Count > 0)
-            {
+                searchQueue = nodesQueue;
 
+            } while (nodesQueue.Count > 0);
 
-            }
+            return depth;
         }
 
     }
