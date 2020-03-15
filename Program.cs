@@ -9,7 +9,19 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
-            int[] encoded = {1, 2, 3, 4};
+            int num = 9669;
+            Console.WriteLine(Maximum69Number.Max69Number(num));
+           //printIntList(Maximum69Number.Max69Number(num).ToList());
+
+            /*List<int> order = new List<int>();
+            order.Add(2);
+            order.Add(10);
+            order.Add(30);
+            int k = 40;
+
+            Console.WriteLine(Visa.filledOrders(order,k));
+
+            /*int[] encoded = {1, 2, 3, 4};
             Console.WriteLine(DecompressEncodedList.DecompressRLElist(encoded));
 
             /*
