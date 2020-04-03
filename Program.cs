@@ -11,9 +11,14 @@ namespace Problems
     {
         static public void Main(string[] args)
         {
+
+            int input = 19;
+            Console.WriteLine(Day2HappyNumber.IsHappy(input));
+
+            /*
             int[] nums = { 2,2,1 };
             Console.WriteLine(Day1SingleNumber.SingleNumber(nums));
-            /*
+            
              string a = "A";
              string b = "B";
              string d = a;
