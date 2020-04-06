@@ -12,10 +12,13 @@ namespace Problems
         static public void Main(string[] args)
         {
 
+            int[] input = {0, 1, 0, 3, 12};
+            printIntList(Day4MoveZeroes.MoveZeroes(input).ToList());
+            /*
             int input = 19;
             Console.WriteLine(Day2HappyNumber.IsHappy(input));
 
-            /*
+            
             int[] nums = { 2,2,1 };
             Console.WriteLine(Day1SingleNumber.SingleNumber(nums));
             
