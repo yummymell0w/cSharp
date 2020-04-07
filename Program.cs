@@ -12,9 +12,19 @@ namespace Problems
         static public void Main(string[] args)
         {
 
+            string[] words = {"eat", "tea", "tan", "ate", "nat", "bat"};
+            var groups = Day6AnagramGroups.GroupAnagrams(words);
+            foreach (var subWord in groups)
+            {
+                printList(subWord.ToList());
+
+            }
+            
+
+            /*
             int[] input = {0, 1, 0, 3, 12};
             printIntList(Day4MoveZeroes.MoveZeroes(input).ToList());
-            /*
+            
             int input = 19;
             Console.WriteLine(Day2HappyNumber.IsHappy(input));
 
